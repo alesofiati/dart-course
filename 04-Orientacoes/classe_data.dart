@@ -13,7 +13,8 @@ class Data {
   // Essa segunda opção é mais elegante e mais curta. Pois simplicia a declaração de atributos e a inicialização dos mesmos.
   // O construtor padrão é chamado quando a classe é instanciada sem passar parametros.
   Data([this.dia = 1, this.mes = 1, this.ano = 1970]);
-
+  // construtores noemados
+  Data.com({this.dia = 1, this.mes = 1, this.ano = 1970});
   /**
    * Método que formata a data no formato dd/mm/aaaa
    */
@@ -27,4 +28,8 @@ main ()
   Data dataAniversario = Data(17, 04, 1998);
   print(dataAniversario.format());
   print(Data(19, 04,1996).format());
+
+  Data data =  Data.com(dia: 19, mes: 04);
+
+  print("Data de aniversário: ${data.format()}");
 }
